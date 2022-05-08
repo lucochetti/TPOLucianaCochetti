@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../TPO/estilo.TPO.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="shortcut icon" href="favicon/favicon-32x32.png">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <title>Contacto</title>
+    
+</head>
+
+<body>
+    <nav>
+        <a href="../TPO/indext.TPO.html">Home</a>
+        <a href="../TPO/productos.TPO.html">Productos</a>
+        <a href="../TPO/sucursales.TPO.html">Sucursales</a>    
+        <a href="../TPO/clientes.html">Clientes</a>
+    </nav>
+    <header>
+        <h1 class="animate__animated animate__rubberBand">MIMADOS</h1>
+        <h2 class="animate__animated animate__bounceInRight">Tienda de mascotas</h1>
+        <!--img src="../TPO/imagenes.TPO/peri-stojnic-5Vr_RVPfbMI-unsplash.jpg"width= 250 height="300" alt="imagen perro"-->
+    </header>
+
+    <section>
+         <h3>Te gustaría recibir información sobre:</h3>
+            <p><label><input type="checkbox" name="Nuevos servicios" value="Nuevos servicios" checked> Nuevos servicios</label></p>
+            <p><label><input type="checkbox" name="Nuevos productos" value="Nuevos productos"checked> Nuevos productos</label></p>
+            <p><label><input type="checkbox" name="Mascotas en adopción" value="Mascotas en adopción" checked> Mascotas en adopción</label></p>
+            <p><label><input type="checkbox" name="Dias y horarios de atención" value="Dias y horarios de atención"checked>Dias y horarios de atención</label></p>
+            <!-- <textarea name="" id="" cols="30" rows="10">comentario</textarea> -->
+            <input type="hidden" name="informacion" value="72625" width="50%" height="50%">      
+            
+        </section>
+    <!--PRUEBA SCRIPT-->
+    <h3>Contactate con nosotros</h3>
+
+    <form name="fvalida">
+        <table>
+            <tr>
+                <td>Nombre: </td>
+                <td><input type="text" name="nombre" size="30" maxlength="100"></td>
+            </tr>
+            <tr>
+                <td>Edad: </td>
+                <td><input type="text" name="edad" size="3" maxlength="2"></td>
+            </tr>
+            <tr>
+                <td>email: </td>
+                <td><input type="text" name="email" size="30" maxlength="100"></td>
+            </tr>
+            <tr>
+                <td>Interés:</td>
+                <td>
+                    <select name="interes">
+                        <option value="Elegir">Elegir
+                        </option>
+                        <option value="Comercial">Contacto comercial </option>
+                        <option value="Clientes">Atención al cliente </option>
+                        <option value="Proveedores">Contacto de proveedores </option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="button" value="Enviar" onclick="valida_envia()"></td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        //Validación
+             function valida_envia() {
+            
+            if (document.fvalida.nombre.value.length == 0) {
+                alert("Tiene que escribir su nombre")
+                document.fvalida.nombre.focus()
+                return 0;
+            }
+
+            edad = document.fvalida.edad.value
+            edad = validarEntero(edad)
+            document.fvalida.edad.value = edad
+            if (edad == "") {
+                alert("Tiene que introducir un número entero en su edad.")
+                document.fvalida.edad.focus()
+                return 0;
+            } else {
+                if (edad < 18) {
+                    alert("Debe ser mayor de 18 años.")
+                    document.fvalida.edad.focus()
+                    return 0;
+                }
+            }
+
+            if (document.fvalida.email.value.length == 0) {
+                alert("Tiene que escribir su email")
+                document.fvalida.email.focus()
+                return 0;
+            }
+            
+            if (document.fvalida.interes.selectedIndex == 0) {
+                alert("Debe seleccionar un motivo de su contacto.")
+                document.fvalida.interes.focus()
+                return 0;
+            }
+            
+            alert("Muchas gracias por enviar el formulario");
+            document.fvalida.submit();
+        }
+
+        function validarEntero(valor) {
+            valor = parseInt(valor)
+            
+            if (isNaN(valor)) {
+                return ""
+            } else {                
+                return valor
+            
+            }
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+    <footer>
+        <i class='bx bxl-facebook-circle bx-flashing bx-lg' ></i>
+        <i class='bx bxl-instagram bx-tada bx-rotate-90 bx-lg' style='color:#ec1be5' ></i>
+        <p id="textoderechos">Derechos Reservados</p>
+    </footer>
+
+</body>
+</html
