@@ -91,27 +91,3 @@ footer{
 .mapa{
     margin: 50px;
 }
-.fotografias{
-    display: grid;
-    grid-template-columns:repeat(12,1fr);
-    grid-template-rows: 100px 100px 100px;
-    gap: 10px 10px;
-    flex-flow: nowrap;
-}
-
-  .item1{
-    grid-column-start: 1;/*de que linea de la columna comienza*/
-    grid-column-end: 4;/*Donde termina*/
-    grid-row-start: 1;/*para la fila de donde comienza*/
-}
-  .item2{
-    grid-column-start: 5;
-    grid-column-end: 8;
-    grid-row-start: 2;
-}
-  .item3{
-    grid-column-start: 9;
-    grid-column-end: 12;
-    grid-row-start: 3;
-}
-  
